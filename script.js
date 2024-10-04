@@ -1,5 +1,5 @@
 let scaleFactor = 1;
-let speed = getURLParameter('speed') ? parseFloat(getURLParameter('speed')) : 0.02; // Speed from URL or default
+let speed = getURLParameter('speed') ? parseFloat(getURLParameter('speed')) : 0.01; // Speed from URL or default
 let rotationAngle = 0; // Initialize rotation angle
 let rotationSpeed = 0.01; // Speed of rotation
 let shouldRotate = getURLParameter('rotate') !== 'false'; // Rotation enabled unless rotate=false is passed
