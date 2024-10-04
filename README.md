@@ -1,3 +1,4 @@
 # Renders a tunnel made of triangles
 
-Dont stare too long: https://vishaldevgire.github.io/tunnelv2/
+Dont stare too long: <a href="https://vishaldevgire.github.io/tunnelv2/" target="_blank">https://vishaldevgire.github.io/tunnelv2/</a>
+
