@@ -1,5 +1,5 @@
 let scaleFactor = 1;
-let speed = 0.01; // Speed of "movement" into the tunnel
+let speed = getURLParameter('speed') ? parseFloat(getURLParameter('speed')) : 0.02; // Speed from URL or default
 let rotationAngle = 0; // Initialize rotation angle
 let rotationSpeed = 0.01; // Speed of rotation
 
@@ -75,4 +75,9 @@ function drawDownwardTriangle(x, y, size) {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   background(0); // Reset background on resize
+}
+
+function getURLParameter(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
 }
