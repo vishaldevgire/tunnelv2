@@ -2,6 +2,7 @@ let scaleFactor = 1;
 let speed = getURLParameter('speed') ? parseFloat(getURLParameter('speed')) : 0.02; // Speed from URL or default
 let rotationAngle = 0; // Initialize rotation angle
 let rotationSpeed = 0.01; // Speed of rotation
+let shouldRotate = getURLParameter('rotate') !== 'false'; // Rotation enabled unless rotate=false is passed
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -16,11 +17,11 @@ function draw() {
   // Set the center of rotation to the center of the canvas
   translate(width / 2, height / 2);
 
-  // Apply rotation based on the rotationAngle
-  rotate(rotationAngle);
-
-  // Update rotation angle for the spinning effect
-  rotationAngle += rotationSpeed;
+  // Apply rotation only if shouldRotate is true
+  if (shouldRotate) {
+    rotate(rotationAngle);
+    rotationAngle += rotationSpeed; // Update rotation angle for the spinning effect
+  }
 
   // Draw triangles infinitely as we "move inward"
   let size = min(width, height) * 0.5 * scaleFactor; // Scale changes dynamically
